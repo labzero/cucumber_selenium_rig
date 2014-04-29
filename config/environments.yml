@@ -1,0 +1,26 @@
+---
+
+dev:
+  app_host: 'foo.com'
+  api_host:
+  user1:
+    username: cheesemaster
+    password: password
+
+qa1:
+  app_host: 'foo.com'
+  user1:
+      username: cheesemaster
+      password: password
+
+staging:
+  app_host: 'foo.com'
+  user1:
+    username: cheesemaster
+    password: password
+
+production:
+  app_host: 'foo.com'
+  user1:
+    username: cheesemaster
+    password: password
