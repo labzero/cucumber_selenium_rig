@@ -4,7 +4,7 @@ require 'capybara/cucumber'
 require_relative 'custom_config'
 include CustomConfig
 
-Capybara.app_host = ENV['APP_HOST'] || env_config['app_host'] || 'http://localhost:8080'
+Capybara.app_host = ENV['APP_HOST'] || env_config['app_host'] || 'http://localhost:3000'
 puts "Capybara.app_host: #{Capybara.app_host}"
 
 AfterConfiguration do
@@ -12,7 +12,6 @@ AfterConfiguration do
     Capybara.app_host = "#{Capybara.app_host || ('http://' + Capybara.current_session.server.host)}:#{Capybara.server_port || (Capybara.current_session.server ? Capybara.current_session.server.port : false) || 80}"
   end
   url = Capybara.app_host
-  url = "#{url}/qxplore/Home" #use the new manifest url too, /serverinfo/manifest
   puts url
   result = nil
   10.times do |i|
