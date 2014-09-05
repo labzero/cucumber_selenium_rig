@@ -10,8 +10,8 @@ dev:
 qa1:
   app_host: 'foo.com'
   user1:
-      username: cheesemaster
-      password: password
+    username: cheesemaster
+    password: password
 
 staging:
   app_host: 'foo.com'
