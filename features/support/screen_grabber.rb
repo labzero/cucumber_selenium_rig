@@ -3,17 +3,8 @@ module ScreenGrabber
 
   def grab_screen name='', force=false
     return unless force || grab_screen?
-
-    if page.driver.browser.respond_to?(:save_screenshot)
-      pic_path = "#{screens_path}/#{filename name}"
-      puts "saving screenshot: #{pic_path}"
-      page.driver.browser.save_screenshot(pic_path)
-      #File.open("#{screens_path}/#{filename name, 'html'}", 'w') {|f| f.write(page.html) }
-    else
-      puts "skipping screenshot, saving text and html from #{page.driver.browser.class.to_s}"
-      File.open("#{screens_path}/#{filename name, 'txt'}", 'w') {|f| f.write(page.text) }
-      File.open("#{screens_path}/#{filename name, 'html'}", 'w') {|f| f.write(page.html) }
-    end
+    pic_path = "#{screens_path}/#{filename name}"
+    page.save_screenshot pic_path
   rescue
     puts $!.inspect
     puts $!.backtrace

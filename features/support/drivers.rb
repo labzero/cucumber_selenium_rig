@@ -7,7 +7,7 @@ Capybara.default_driver = my_driver
 Capybara.javascript_driver = my_driver
 
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome, :switches => %w[--disable-popup-blocking --incognito --disable-interactive-autocomplete --disable-password-autofill-public-suffix-domain-matching])
+  Capybara::Selenium::Driver.new(app, :browser => :chrome, :switches => %w[--disable-popup-blocking])
 end
 
 Capybara.register_driver :firefox do |app|
