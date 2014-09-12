@@ -35,6 +35,7 @@ def links_from_frame frame_name, opts={limit: 20}
   links
 end
 
+#fails if any link produces a response that looks like a 404 or 500
 def visit_all links
   not_found = []
   server_error = []
